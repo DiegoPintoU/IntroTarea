@@ -19,6 +19,27 @@ node *Puntero(Node *lista) { //Crea una lista
 	lista = NULL;
 }
 
+void add_lista(node *ptr) {
+	if(lista == NULL) {
+		lista = ptr;
+	} else {
+		//Agrega nodos al final
+		auxiliar = lista;
+		while (auxiliar -> next != NULL) {  //Recorre la lista hasta llegar al ultimo
+			auxiliar = auxiliar -> next;
+		}
+		auxiliar -> next = new_node //Aqui avanza al siguiente nodo
+		new_node -> next = lista;
+		lista = new_node
+	}
+
+void delete_elemento(node *lista) { //BETA
+	if(lista != NULL) {
+			node *temporal;
+			temporal =lista;
+			lista = lista -> next;
+	}
+
 int main()
 {
     node *lista = Puntero(lista);
@@ -26,21 +47,9 @@ int main()
     ptr = new node;
 	ptr -> value = 1;
 	ptr -> next = NULL;
-	
-	if(lista == NULL) {
-		lista = ptr;
-	} else {
-		//Agrega nodos al final
-		auxiliar = lista;
-		while (auxiliar -> next != NULL) {  //Recorre la lista hasta llegar al último
-			auxiliar = auxiliar -> next;
-		}
-		auxiliar -> next = new_node //Aqui avanza al siguiente nodo
-		new_node -> next = lista;
-		lista = new_node
-	}
     add_node(ptr, 2);
 	add_node(ptr, 3);
+	add_lista(ptr)
     cout << ptr->value << ptr->next->value<<endl;
 	return lista;
     return 0;
