@@ -31,14 +31,14 @@ void add_lista(node *ptr) {
 		auxiliar -> next = new_node //Aqui avanza al siguiente nodo
 		new_node -> next = lista;
 		lista = new_node
+	return lista
 	}
 
-void delete_elemento(node *lista) { //BETA
-	if(lista != NULL) {
-			node *temporal;
-			temporal =lista;
-			lista = lista -> next;
+void delete_elemento(node *lista, int elemento) { //Intento :c
+	while ((temporal -> next) -> elemen != elemento) {
+		temporal = temporal -> next;
 	}
+}
 
 int main()
 {
@@ -49,7 +49,7 @@ int main()
 	ptr -> next = NULL;
     add_node(ptr, 2);
 	add_node(ptr, 3);
-	add_lista(ptr)
+	add_lista(ptr);
     cout << ptr->value << ptr->next->value<<endl;
 	return lista;
     return 0;
